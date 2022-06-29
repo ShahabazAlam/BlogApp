@@ -133,11 +133,11 @@ export default function Home() {
 
             <Group position="apart" className={classes.footer}>
               <Group spacing={8} mr={0}>
-                {((userdata.is_super || userdata.permissions.includes('update')) || userdata.user_id == res.user_id) &&
+                {((userdata.super_user || userdata.permissions.includes('update')) || userdata.user_id == res.user_id) &&
                   <ActionIcon className={classes.action} style={{ color: theme.colors.red[6] }}>
                     <Edit size={16} onClick={() => openEditModal(true, res)} />
                   </ActionIcon>}
-                {((userdata.is_super || userdata.permissions.includes('delete')) || userdata.user_id == res.user_id) &&
+                {((userdata.super_user || userdata.permissions.includes('delete')) || userdata.user_id == res.user_id) &&
                   <ActionIcon className={classes.action} style={{ color: theme.colors.yellow[7] }}>
                     <ArchiveOff size={16} onClick={() => deleteBlogConfirm(res.id)} />
                   </ActionIcon>}
